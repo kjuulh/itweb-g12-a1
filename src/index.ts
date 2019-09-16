@@ -9,7 +9,12 @@ const app = require('./config/express').default()
 // Configure server
 const server: http.Server = new http.Server(app)
 
-server.listen(8080)
+let port = process.env.PORT
+if (port == null || port == '') {
+  port = '8080'
+}
+
+server.listen(parseInt(port))
 
 server.on('error', (e: Error) => console.log('Error starting server: ' + e))
 
