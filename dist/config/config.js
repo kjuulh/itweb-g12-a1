@@ -11,7 +11,10 @@ var Config = /** @class */ (function () {
     Config.port = 3000;
     Config.routes = './dist/routes/**/*.js';
     Config.models = './dist/models/**/*.js';
-    Config.useMongo = false;
+    Config.useMongo = true;
+    Config.mongodb = process.env.NODE_ENV === 'docker'
+        ? 'mongodb://mongo:27017/express'
+        : 'mongodb://localhost:27017/express';
     return Config;
 }());
 exports.default = Config;
