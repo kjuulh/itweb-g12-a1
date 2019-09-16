@@ -16,11 +16,13 @@ function default_1() {
         require(path.resolve(model));
     }
     if (config_1.default.useMongo) {
+        console.log(config_1.default.mongodb);
         mongoose
             .connect(config_1.default.mongodb, {
-            useMongoClient: true,
+            useNewUrlParser: true,
+            dbName: 'itweb-g12',
         })
-            .catch(function () { return console.log('Error connecting to mongo'); });
+            .catch(function (err) { return console.log('Error connecting to mongo' + err); });
     }
     app.use(logger('dev'));
     app.use(bodyParser.json());

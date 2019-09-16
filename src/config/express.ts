@@ -17,9 +17,13 @@ export default function() {
   }
 
   if (config.useMongo) {
+    console.log(config.mongodb)
     mongoose
-      .connect(config.mongodb)
-      .catch(() => console.log('Error connecting to mongo'))
+      .connect(config.mongodb, {
+        useNewUrlParser: true,
+        dbName: 'itweb-g12',
+      })
+      .catch(err => console.log('Error connecting to mongo' + err))
   }
 
   app.use(logger('dev'))

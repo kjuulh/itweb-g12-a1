@@ -7,9 +7,10 @@ export default class Config {
   public static models: string = './dist/models/**/*.js'
   public static useMongo: boolean = true
   public static mongodb =
-    process.env.NODE_ENV === 'docker'
-      ? 'mongodb://mongo:27017/express'
-      : 'mongodb://localhost:27017/express'
+    process.env.NODE_ENV === 'local'
+      ? 'mongodb://localhost:27017/express'
+      : 'mongodb+srv://hermansenadmin:Blizzar1@itweb-g12-cbwzt.gcp.mongodb.net/itweb-g12'
+
   public static globFiles(location: string): string[] {
     return union([], sync(location))
   }

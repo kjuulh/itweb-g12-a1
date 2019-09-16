@@ -12,9 +12,9 @@ var Config = /** @class */ (function () {
     Config.routes = './dist/routes/**/*.js';
     Config.models = './dist/models/**/*.js';
     Config.useMongo = true;
-    Config.mongodb = process.env.NODE_ENV === 'docker'
-        ? 'mongodb://mongo:27017/express'
-        : 'mongodb://localhost:27017/express';
+    Config.mongodb = process.env.NODE_ENV === 'local'
+        ? 'mongodb://localhost:27017/express'
+        : 'mongodb+srv://hermansenadmin:Blizzar1@itweb-g12-cbwzt.gcp.mongodb.net/itweb-g12';
     return Config;
 }());
 exports.default = Config;
