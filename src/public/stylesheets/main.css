@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%; }
+
+#page-content {
+  flex: 1 0 auto; }
+
+footer {
+  flex-shrink: none; }
+
+.text-gray {
+  color: #919191; }
+
+@media (min-width: 768px) {
+  .container--xs {
+    max-width: 570px; } }
+
+.registration-form label span {
+  color: red; }

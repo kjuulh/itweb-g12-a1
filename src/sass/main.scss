@@ -1,0 +1,36 @@
+@import '_colors';
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: none;
+}
+
+// text colors
+
+.text-gray {
+  color: lighten($primary-color, 30%);
+}
+
+// Signup
+
+@media (min-width: 768px) {
+  .container--xs {
+    max-width: 570px;
+  }
+}
+
+.registration-form {
+  label {
+    span {
+      color: red;
+    }
+  }
+}

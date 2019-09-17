@@ -1,0 +1,9 @@
+mixin formText(content, name, type)
+  div(class!=attributes.class).my-3
+    label(for=name)=content
+      span.required *
+    input(
+      type=type 
+      name=name
+      required).input-text.form-control
+  .invalid-feedback This field is require

@@ -1,0 +1,28 @@
+mixin link(url, addr, currentUrl)
+  - var isActive = url == currentUrl
+  if isActive
+    li.nav-item.active
+      a(href=url).nav-link= addr
+        span.sr-only (current)
+  else
+    li.nav-item
+      a(href=url).nav-link= addr
+
+.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  a(href='index').navbar-brand.text-white Workouts
+  button(
+    type="button" 
+    data-toggle="collapse"
+    data-target="#navbar-toggler" 
+    aria-controls="navbar-toggler" 
+    aria-expanded="false" 
+    aria-label="Toggle navbar"
+  ).navbar-toggler
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbar-toggler
+    ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      +link('index', 'Home', url)
+      +link('about', 'About', url)
+    ul.navbar-nav
+      +link('login', 'Login', url)
+      +link('signup', 'Signup', url)

@@ -1,7 +1,16 @@
 doctype
 html
   head
-    title=title
-    link(rel="stylesheet", href="/stylesheets/style.css")
-  body
-    block content
+    title=title + ' | Workouts'
+    include includes/styles.pug
+  body.d-flex.flex-column
+    block url
+      - var url = title.toLowerCase()
+    block navbar
+      include includes/navbar.pug
+    #page-content.container.mt-5
+      block content
+    block footer
+      include includes/footer.pug
+    block scripts
+      include includes/scripts.pug

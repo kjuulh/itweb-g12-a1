@@ -1,0 +1,18 @@
+extends layout
+
+include includes/formElement.pug
+
+block content
+  .row
+    .container.container--xs
+      h1.mb-1.text-center Sign up
+      p.fs-14.text-gray.text-center.mb-5 Sign up for the coolest workouts on the planet
+      .registration-form
+        h2 Register
+        form(method="post" action="/signup").register
+          +formText('First name ',    'firstName','text').form-firstName
+          +formText('Last name ',     'lastName', 'text').form-lastName
+          +formText('Email address ', 'email',    'email').form-email
+          +formText('Password ',      'password', 'password').form-password
+          input(type="submit" name="register" value="Register").btn.btn-primary
+
