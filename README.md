@@ -5,7 +5,13 @@
 - Class: ITWEB
 - Date: 28-09-2019
 
-## Body
+## Technological requirements
+
+Node is used as a webserver, with express as an opinionated MVC framework. Pug is used as the templating engine and mongodb (using mongoose) as the database.
+
+Heroku is used as the Cloud hosting provider and Mongodb Atlas as the distributed database provider.
+
+## Purpose
 
 ### The principles for using a MVC framework on a webserver
 
