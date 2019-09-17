@@ -8,6 +8,9 @@ html
       - var url = title.toLowerCase()
     block navbar
       include includes/navbar.pug
+    block message
+      if message && message.length
+        .alert.alert-danger.text-center#message #{message}
     #page-content.container.mt-5
       block content
     block footer
