@@ -21,6 +21,7 @@ export default function() {
     mongoose
       .connect(config.mongodb, {
         useNewUrlParser: true,
+        useUnifiedTopology: true,
         dbName: 'itweb-g12',
       })
       .catch(err => console.log('Error connecting to mongo' + err))
