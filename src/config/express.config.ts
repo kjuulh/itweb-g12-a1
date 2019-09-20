@@ -2,6 +2,7 @@ import * as express from 'express'
 import * as logger from 'morgan'
 import databaseConfig from './database.config'
 import flashConfig from './flash.config'
+import middlewareConfig from './middleware.config'
 import parserConfig from './parser.config'
 import passportConfig from './passport.config'
 import routesConfig from './routes.config'
@@ -16,6 +17,7 @@ export default function() {
   parserConfig(app)
   passportConfig(app)
   staticConfig(app)
+  middlewareConfig(app)
   routesConfig(app)
 
   return app

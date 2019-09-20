@@ -4,7 +4,7 @@ html
     title=title + ' | Workouts'
     include includes/styles.pug
   body.d-flex.flex-column
-    block url
+    block variables
       - var url = title.toLowerCase()
     block navbar
       include includes/navbar.pug

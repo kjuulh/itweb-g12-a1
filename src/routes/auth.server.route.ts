@@ -16,5 +16,6 @@ export default class AuthRoutes {
       failureRedirect: '/signup',
       failureFlash: true,
     }))
+    app.route('/logout').get(authController.logout)
   }
 }

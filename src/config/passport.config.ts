@@ -78,4 +78,5 @@ export default (app: express.Express) => {
       return done(null, user)
     })
   }))
+
 }

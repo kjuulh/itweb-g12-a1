@@ -24,5 +24,8 @@ mixin link(url, addr, currentUrl)
       +link('index', 'Home', url)
       +link('about', 'About', url)
     ul.navbar-nav
-      +link('login', 'Login', url)
-      +link('signup', 'Signup', url)
+      if !isLoggedIn
+        +link('login', 'Login', url)
+        +link('signup', 'Signup', url)
+      else
+        a(href='/logout').nav-link Logout

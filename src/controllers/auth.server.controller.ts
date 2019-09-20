@@ -11,6 +11,11 @@ export default class AuthenticationController {
   public signup(req: Request, res: Response, next: Function): void {
     res.render('signup', { title: 'Signup', message: req.flash('signupMessage') })
   }
+
+  public logout(req: Request, res: Response, next: Function): void {
+    req.logOut()
+    res.redirect('/')
+  }
 }
 
 export const authController = new AuthenticationController()
