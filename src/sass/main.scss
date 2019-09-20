@@ -34,3 +34,19 @@ footer {
     }
   }
 }
+
+// My Workouts
+
+.workouts-search {
+  input {
+    border: 1px solid red;
+  }
+}
+
+.icon-background {
+  color: white;
+  :hover {
+    background: black;
+    color: black;
+  }
+}

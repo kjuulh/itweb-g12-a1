@@ -17,3 +17,12 @@ footer {
 
 .registration-form label span {
   color: red; }
+
+.workouts-search input {
+  border: 1px solid red; }
+
+.icon-background {
+  color: white; }
+  .icon-background :hover {
+    background: black;
+    color: black; }

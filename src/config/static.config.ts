@@ -20,6 +20,12 @@ export default (app: express.Express) => {
     ),
   )
   app.use(
+    '/stylesheets',
+    express.static(
+      path.join(__dirname, '../../node_modules/@fortawesome'),
+    ),
+  )
+  app.use(
     '/scripts',
     express.static(path.join(__dirname, '../../node_modules/bootstrap/dist/js')),
   )

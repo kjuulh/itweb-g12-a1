@@ -1,5 +1,5 @@
 mixin link(url, addr, currentUrl)
-  - var isActive = url == currentUrl
+  - var isActive = addr.toLowerCase() == currentUrl
   if isActive
     li.nav-item.active
       a(href=url).nav-link= addr
@@ -21,11 +21,12 @@ mixin link(url, addr, currentUrl)
     span.navbar-toggler-icon
   .collapse.navbar-collapse#navbar-toggler
     ul.navbar-nav.mr-auto.mt-2.mt-lg-0
-      +link('index', 'Home', url)
-      +link('about', 'About', url)
+      +link('/index', 'Home', url)
+      +link('/about', 'About', url)
+      +link('/workouts', 'Workouts', url)
     ul.navbar-nav
       if !isLoggedIn
-        +link('login', 'Login', url)
-        +link('signup', 'Signup', url)
+        +link('/login', 'Login', url)
+        +link('/signup', 'Signup', url)
       else
         a(href='/logout').nav-link Logout
