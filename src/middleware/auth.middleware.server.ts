@@ -9,7 +9,6 @@ export const authGuard = (request: Request, response: Response, next: Function) 
   if (request.isAuthenticated()) {
     next()
   } else {
-
   response.redirect('/login')
   }
 }

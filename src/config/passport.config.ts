@@ -13,7 +13,7 @@ export default (app: express.Express) => {
       resave: true,
       saveUninitialized: true,
       secret: 'This is ma little secret',
-      cookie: { maxAge: 60000 },
+      cookie: { maxAge: 365 * 24 * 60 * 60 * 1000 },
     }),
   ) // TODO: fix
   app.use(passport.initialize())
