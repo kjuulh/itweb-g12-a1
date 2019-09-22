@@ -190,6 +190,14 @@
     "@types/passport" "*"
     "@types/passport-strategy" "*"
 
+"@types/passport-remember-me-extended@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@types/passport-remember-me-extended/-/passport-remember-me-extended-0.0.0.tgz#e3ac2f31e852d0261cd66f9a513fce897d0c335c"
+  integrity sha512-j3jSyXM1zHC/78gmDYgpvEMS2D73HhMEmWrcu12U5UZF6TPzZrmw54ASHdUExmL+Bulg3tXqlMuQ/qMuqFf/1w==
+  dependencies:
+    "@types/express" "*"
+    "@types/passport" "*"
+
 "@types/passport-strategy@*":
   version "0.2.35"
   resolved "https://registry.yarnpkg.com/@types/passport-strategy/-/passport-strategy-0.2.35.tgz#e52f5212279ea73f02d9b06af67efe9cefce2d0c"
@@ -2680,6 +2688,14 @@ passport-local@^1.0.0:
   dependencies:
     passport-strategy "1.x.x"
 
+passport-remember-me@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/passport-remember-me/-/passport-remember-me-0.0.1.tgz#0aa6095c82480f44619456aef363ccb929bc2bc3"
+  integrity sha1-CqYJXIJID0RhlFau82PMuSm8K8M=
+  dependencies:
+    passport "~0.1.1"
+    pkginfo "0.2.x"
+
 passport-strategy@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/passport-strategy/-/passport-strategy-1.0.0.tgz#b5539aa8fc225a3d1ad179476ddf236b440f52e4"
@@ -2692,6 +2708,14 @@ passport@^0.4.0:
   dependencies:
     passport-strategy "1.x.x"
     pause "0.0.1"
+
+passport@~0.1.1:
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/passport/-/passport-0.1.18.tgz#c8264479dcb6414cadbb66752d12b37e0b6525a1"
+  integrity sha1-yCZEedy2QUytu2Z1LRKzfgtlJaE=
+  dependencies:
+    pause "0.0.1"
+    pkginfo "0.2.x"
 
 path-dirname@^1.0.0:
   version "1.0.2"
@@ -2775,6 +2799,11 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
+
+pkginfo@0.2.x:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/pkginfo/-/pkginfo-0.2.3.tgz#7239c42a5ef6c30b8f328439d9b9ff71042490f8"
+  integrity sha1-cjnEKl72wwuPMoQ52bn/cQQkkPg=
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

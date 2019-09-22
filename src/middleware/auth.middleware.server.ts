@@ -6,8 +6,10 @@ export const setIsLoggedIn = (request: Request, response: Response, next: Functi
 }
 
 export const authGuard = (request: Request, response: Response, next: Function) => {
-  if (response.locals.isLoggedIn) {
+  if (request.isAuthenticated()) {
     next()
-  }
+  } else {
+
   response.redirect('/login')
+  }
 }

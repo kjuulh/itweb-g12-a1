@@ -1,12 +1,19 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:latest"],
+  "extends": [
+    "tslint:latest"
+  ],
   "jsRules": {},
   "rules": {
-    "quotemark": [true, "single"],
+    "quotemark": [
+      true,
+      "single"
+    ],
     "semicolon": false,
     "arrow-parens": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-string-literal": false,
+    "no-console": false
   },
   "rulesDirectory": []
 }

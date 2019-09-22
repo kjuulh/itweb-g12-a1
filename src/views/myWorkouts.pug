@@ -3,3 +3,29 @@ extends layout
 block content
   h1=title
   p Welcome to #{title}
+
+  .container.mt-4
+    .row
+      .col-md-8
+        h3 Create your own workout
+        form(action="/workouts" method="post")
+          .form-group
+            label(for="name") Name
+            input(type="text" name="name").form-control
+          .form-group
+            label(for="description") Description
+            textarea(name="description", cols="30", rows="5").form-control
+          button(type="submit").btn.btn-primary Create workout
+      .col-md-4
+        h3 Your Workouts
+        .ml-3.mt-4
+          for workout in workouts
+            a(href="/workouts/" + workout._id)
+              if workout.name.length > 40
+                h5.mt-2=workout.name.slice(0,40)+'...'
+              else
+                h5.mt-2=workout.name
+            if workout.description.length > 80
+              p.ml-4=workout.description.slice(0,80)+'...'
+            else
+              p.ml-4=workout.description

@@ -7,11 +7,13 @@ block content
     .row
       .col-md-8
         h2 All Workouts
-        form.form-inline.workouts-search
-          span.fa-stack.fa-lg.search-icon
-            i.fa.fa-circle.fa-stack-2x.icon-background
-            i.fa.fa-search.fa-stack-1x
-          input(type="text").form-control.form-control-sm.ml-3.w-75
+        .input-group
+          input(type="text" placeholder="Search").form-control
+          div.input-group-append
+            button.form-control.btn.btn-secondary
+              i.fa.fa-search
+        .container.mt-4
+          p workouts
           
       .col-md-4
         p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta odio fugiat expedita exercitationem quidem, in vero consectetur pariatur natus optio assumenda numquam praesentium minus quae neque doloremque culpa porro similique. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum eum id eius omnis ab ea, nesciunt reprehenderit architecto laboriosam maxime porro ut soluta amet recusandae, quam debitis sequi eos est.

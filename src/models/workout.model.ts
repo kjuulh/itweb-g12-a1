@@ -1,6 +1,7 @@
 import { Document, Model, model, Schema } from 'mongoose'
 
 export interface IWorkout extends Document {
+  id: string,
   ownerId: string,
   name: string,
   description: string,
@@ -9,13 +10,18 @@ export interface IWorkout extends Document {
 }
 
 export let WorkoutSchema: Schema = new Schema({
+  id: {
+    type: Schema.Types.ObjectId,
+  },
   ownerId: {
     required: true,
     type: Schema.Types.ObjectId,
+    ref: 'User',
   },
   name: {
     required: true,
     type: Schema.Types.String,
+    minlength: 1,
   },
   description: {
     type: Schema.Types.String,
@@ -31,4 +37,4 @@ export let WorkoutSchema: Schema = new Schema({
   },
 })
 
-export const User: Model<IWorkout> = model<IWorkout>('Workout', WorkoutSchema)
+export const Workout: Model<IWorkout> = model<IWorkout>('Workout', WorkoutSchema)

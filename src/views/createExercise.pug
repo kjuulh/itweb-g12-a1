@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    h1=title
+
+    .container
+      form(action="/workouts/" + workout._id + "/exercises" method="POST")
+        .form-group
+          label(for="name") Name/Type
+          input(type="text" name="name" placeholder="Squat..." required).form-control
+        .form-group
+          label(for="description") Description
+          textarea(name="description", cols="30", rows="5" placeholder="Description...").form-control
+        .form-group
+          label(for="sets") Sets
+          input(type="number" name="sets" value="1" required min="1").form-control
+        h5 Choose type
+        .form-check
+          input.form-check-input#time(type="radio" name="repsOrTime" value="time" checked)
+          label(for="time").form-check-label Time
+        .form-check
+          input.form-check-input#reps(type="radio" name="repsOrTime" value="reps")
+          label(for="reps").form-check-label Reps
+        .form-group
+          label(for="repsTime") Reps/Time
+          input(type="number" name="repsTime" value="1" required min="1").form-control
+        button(type="submit").btn.btn-primary.mt-4 Create
+

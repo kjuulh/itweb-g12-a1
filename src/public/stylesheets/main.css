@@ -26,3 +26,6 @@ footer {
   .icon-background :hover {
     background: black;
     color: black; }
+
+.exercise-a {
+  color: white !important; }

@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    h1=title
+    .container
+      form(action="/workouts/" + workout._id + '/put' method="POST")
+        .form-group
+          label(for="name") Name
+          input(type="text" name="name" value=workout.name).form-control
+        .form-group
+          label(for="description") Description
+          textarea(name="description", cols="30", rows="5").form-control=workout.description
+        .form-group
+            h4 Exercises
+            if exercises && exercises.length
+              .container.my-3
+                for exercise in exercises
+                  ul.list-group.my-4
+                    li.list-group-item.active
+                      a.exercise-a(href="/workouts/" + workout._id + "/exercises/" + exercise._id + "/edit")
+                        span Name: 
+                        span=exercise.name
+                    li.list-group-item
+                      span Description: 
+                      span=exercise.description
+                    li.list-group-item
+                      span Sets: 
+                      span=exercise.sets
+                    if exercise.reps
+                      li.list-group-item
+                        span Reps: 
+                        span=exercise.reps
+                    else if exercise.time
+                      li.list-group-item
+                        span Seconds: 
+                        span=exercise.time
+                a(href="/workouts/" + workout._id + "/exercises").btn.btn-success Add Exercise
+            
+        div.my-4
+          span
+            button(type="submit").btn.btn-primary Save changes
+          span.ml-2
+            a(href="/workouts/" + workout._id).btn.btn-danger Delete (Doesn't work yet)
+
