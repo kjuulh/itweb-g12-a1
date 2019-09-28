@@ -2,6 +2,7 @@
 
 - Group: 12
   - Kasper J. Hermansen, au557919, 201607110
+  - Sameer A. Habibi, au543939, 201606697
 - Class: ITWEB
 - Date: 28-09-2019
 
@@ -34,7 +35,7 @@ Heroku is used as the Cloud hosting provider and Mongodb Atlas as the distribute
 
 The purpose of using MVC on a webserver is to seperate logic, such as domain, dataaccess and presentation from each other.
 
-The Model layer will contain the domain knowledge, and is the layer that interacts with the data persisted or not.
+The Model layer will contain the domain knowledge, and is the layer that interacts with the data persisted, or not.
 
 The View layer handles the presentation logic, it can be html, json or any other format. The purpose of the format is just that it is seperated from the business logic in the model and isn't tied to the actual handling of the view itself, such as decoding messages from clients or sending data to clients. The view layer should be stateless and only contain logic to enhance the presentation of the contents.
 
