@@ -5,13 +5,17 @@ import { IWorkout, Workout } from '../models/workout.model'
 
 export default class WorkoutsController {
   public index(req: Request, res: Response, next: Function): void {
-    res.render('workouts', { title: 'Workouts' })
+    Workout.find((err, workouts) => {
+      if (!err) {
+        res.render('workouts', { title: 'Workouts', workouts })
+      }
+    })
   }
 
   public myWorkouts(req: Request, res: Response, next: Function): void {
     Workout.find({ ownerId: req.user['_id'] }, (err, workouts) => {
       if (err) {
-        req.flash('workoutMessages', 'couldn\'t get workouts')
+        req.flash('workoutMessages', "couldn't get workouts")
       }
       res.render('myWorkouts', {
         title: 'My Workouts',
@@ -31,7 +35,7 @@ export default class WorkoutsController {
     workout.save(err => {
       if (err) {
         console.log('An error occurred saving workout')
-        req.flash('workoutMessages', 'Couldn\'t save workout')
+        req.flash('workoutMessages', "Couldn't save workout")
       }
       res.redirect('/workouts/mine')
     })
@@ -45,12 +49,12 @@ export default class WorkoutsController {
       const userId = req.user['_id']
       const workoutOwnerId = workout.ownerId
       if (!userId.equals(workoutOwnerId)) {
-        console.log('User doesn\'t have permission')
+        console.log("User doesn't have permission")
         res.redirect('/home')
       }
       if (err) {
         console.error(err)
-        req.flash('workoutMessages', 'Clouldn\'t update workout')
+        req.flash('workoutMessages', "Clouldn't update workout")
         res.redirect('/workouts/' + req.params.workoutId)
         return
       }
@@ -60,7 +64,7 @@ export default class WorkoutsController {
         if (err) {
           console.error(err)
           console.log('An error occurred saving workout')
-          req.flash('workoutMessages', 'Couldn\'t update workout')
+          req.flash('workoutMessages', "Couldn't update workout")
           res.redirect('/workouts/' + req.params.workoutId)
           return
         }
@@ -82,7 +86,7 @@ export default class WorkoutsController {
         }
         Exercise.find({ workoutId: workout._id }, (err, exercises) => {
           if (err) {
-            console.error('Couldn\'t get exercises')
+            console.error("Couldn't get exercises")
           } else {
             if (req.isAuthenticated()) {
               const userId = req.user['_id']
@@ -92,14 +96,27 @@ export default class WorkoutsController {
                   title: 'Edit Workout: ' + workout.name,
                   workout,
                   exercises,
+                  loggedIn: true,
                 })
                 return
+              } else {
+                res.render('workout', {
+                  title: 'Workout: ' + workout.name,
+                  workout,
+                  exercises,
+                  loggedIn: true,
+                })
               }
             }
-            res.render('workout', { title: 'Workout: ' + workout.name })
+            res.render('workout', {
+              title: 'Workout: ' + workout.name,
+              workout,
+              exercises,
+              loggedIn: false,
+            })
           }
         })
-      },
+      }
     )
   }
 }

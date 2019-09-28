@@ -1,4 +1,29 @@
 extends layout
 
 block content
-    h1=title
+  h1=title
+  h2.mt-5='Name: ' + workout.name
+  h3.my-1='Description: ' + workout.description
+  h4.my-4 Exercises
+  if exercises && exercises.length
+    .container
+      for exercise in exercises
+        ul.list-group.my-2
+          li.list-group-item.active
+              a.exercise-a(href="/workouts/" + workout._id + "/exercises/" + exercise._id + "/edit")
+              span Name: 
+              span=exercise.name
+          li.list-group-item
+              span Description: 
+              span=exercise.description
+          li.list-group-item
+              span Sets: 
+              span=exercise.sets
+          if exercise.reps
+              li.list-group-item
+                  span Reps: 
+                  span=exercise.reps
+          else if exercise.time
+              li.list-group-item
+                  span Seconds: 
+                  span=exercise.time
