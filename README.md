@@ -5,6 +5,10 @@
 - Class: ITWEB
 - Date: 28-09-2019
 
+## Production url
+
+[https://itweb-g12-a1.herokuapp.com](https://itweb-g12-a1.herokuapp.com)
+
 ## Technological requirements
 
 Node is used as a webserver, with express as an opinionated MVC framework. Pug is used as the templating engine and mongodb (using mongoose) as the database.
