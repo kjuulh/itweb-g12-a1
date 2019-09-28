@@ -5,6 +5,19 @@
 - Class: ITWEB
 - Date: 28-09-2019
 
+## Table of contents
+
+- [Assignment 1](#assignment-1)
+  - [Table of contents](#table-of-contents)
+  - [Production url](#production-url)
+  - [Technological requirements](#technological-requirements)
+  - [Purpose](#purpose)
+    - [The principles for using a MVC framework on a webserver](#the-principles-for-using-a-mvc-framework-on-a-webserver)
+    - [Design and implement a web site that include persistence of data in a database](#design-and-implement-a-web-site-that-include-persistence-of-data-in-a-database)
+    - [Hosting the web application in cloud based hosting environments](#hosting-the-web-application-in-cloud-based-hosting-environments)
+  - [Install & Run](#install--run)
+  - [Contribute](#contribute)
+
 ## Production url
 
 [https://itweb-g12-a1.herokuapp.com](https://itweb-g12-a1.herokuapp.com)
